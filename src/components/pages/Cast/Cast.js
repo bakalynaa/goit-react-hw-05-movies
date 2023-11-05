@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCredits } from '../../api';
+// eslint-disable-next-line
 import styles from './Cast.module.css';
 
 function Cast() {

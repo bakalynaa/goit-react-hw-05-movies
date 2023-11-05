@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { fetchSearchMovies } from '../../api';
 import SearchForm from '../../SearchForm/SearchForm';
 import MoviesList from '../../MoviesList/MoviesList';
+// eslint-disable-next-line
 import styles from './Movies.module.css'
 function Movies() {
   const [searchResults, setSearchResults] = useState([]);
