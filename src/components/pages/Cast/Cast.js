@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCredits } from '../../api';
+import noImage from '../../../image/No-Image.png'
 // eslint-disable-next-line
 import styles from './Cast.module.css';
 
@@ -23,13 +24,14 @@ function Cast() {
         {cast.map((actor) => (
           <li key={actor.id}>
             <p>{actor.name}</p>
-            {actor.profile_path && (
               <img
-                src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
+                src={
+                actor.profile_path
+                  ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
+                  : noImage}
                 alt={`${actor.name}'s profile`}
                 width={250}
               />
-            )}
           </li>
         ))}
       </ul>

@@ -8,8 +8,12 @@ const SearchForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim() === '') return;
-    onSubmit(query);
+    const newQuery = e.currentTarget.search.value;
+
+    if (newQuery.trim() === '') return;
+
+    onSubmit(newQuery);
+    setQuery('');
   };
 
   return (
@@ -17,8 +21,9 @@ const SearchForm = ({ onSubmit }) => {
       <input
         type="text"
         placeholder="Search for a movie..."
+        name='search'
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e)=> setQuery(e.target.value) }
       />
       <button type="submit">Search</button>
     </form>
